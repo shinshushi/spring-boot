@@ -8,7 +8,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "new")
-public class NewEntity extends BaseEntity {
+public class NewEntity extends BaseEntityNews {
 	
 	@Column(name = "title")
 	private String title;

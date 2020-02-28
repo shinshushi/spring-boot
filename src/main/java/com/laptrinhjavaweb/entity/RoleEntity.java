@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "role")
-public class RoleEntity extends BaseEntity {
+public class RoleEntity extends BaseEntityNews {
 	
 	@Column
 	private String code;

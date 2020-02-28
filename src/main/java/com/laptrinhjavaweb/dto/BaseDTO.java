@@ -1,23 +1,12 @@
-package com.laptrinhjavaweb.entity;
+package com.laptrinhjavaweb.dto;
 
 import java.util.Date;
 
-import com.laptrinhjavaweb.annotation.Column;
-
-public class BaseEntity {
-	@Column(name = "id")
+public class BaseDTO {
 	private Long id;
-
-	@Column(name = "createddate")
-	private Date createdDate;
-	
-	@Column(name = "modifieddate")
-	private Date modifiedDate;
-	
-	@Column(name = "createdby")
-	private String createdBy;
-	
-	@Column(name = "modifiedby")
+	private Date createdDate;	
+	private Date modifiedDate;	
+	private String createdBy;	
 	private String modifiedBy;
 	
 	public Long getId() {

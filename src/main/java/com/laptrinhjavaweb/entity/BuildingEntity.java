@@ -1,8 +1,8 @@
 package com.laptrinhjavaweb.entity;
 
-import com.laptrinhjavaweb.annotation.Column;
-import com.laptrinhjavaweb.annotation.Entity;
-import com.laptrinhjavaweb.annotation.Table;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "building")

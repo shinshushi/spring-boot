@@ -20,44 +20,6 @@ public class BuildingAPI {
 //	private static final long serialVersionUID = 1L;
 	private IBuildingService buildingService = new BuildingService();
 //       
-//	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		ObjectMapper mapper = new ObjectMapper();
-//		//convert params in request to model input
-//		BuildingInput buildingInput = FormUtil.toModel(BuildingInput.class, request);
-//		//convert model input to builder
-//		BuildingSearchBuilder builder = new BuildingSearchBuilder.Builder()
-//				.setName(buildingInput.getName())
-//				.setDistrict(buildingInput.getDistrict())
-//				.setFloorArea(StringUtils.isNotBlank(buildingInput.getFloorArea()) ? Integer.parseInt(buildingInput.getFloorArea()) : null)
-//				.setNumberOfBasement(StringUtils.isNotBlank(buildingInput.getNumberOfBasement()) ? Integer.parseInt(buildingInput.getNumberOfBasement()) : null)
-//				.setRentAreaFrom(buildingInput.getRentAreaFrom())
-//				.setRentAreaTo(buildingInput.getRentAreaTo())
-//				.setRentCostFrom(buildingInput.getRentCostFrom())
-//				.setRentCostTo(buildingInput.getRentCostTo())
-//				.setStaffId(buildingInput.getStaffId())
-//				.setTypes(buildingInput.getTypes())
-//				.build();
-//		
-//		//get data from database and save in dto
-//		List<BuildingDTO> result = buildingService.findAll(builder);
-//		//convert dto to json to send to client through response
-//		mapper.writeValue(response.getOutputStream(), result);
-//	}
-//
-//	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		ObjectMapper mapper = new ObjectMapper();
-//		BuildingDTO buildingDTO = HttpUtil.of(request.getReader()).toModel(BuildingDTO.class);
-//		buildingService.insert(buildingDTO);
-//		mapper.writeValue(response.getOutputStream(), buildingDTO);
-//	}
-//	
-//	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		
-//	}
-//	
-//	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		
-//	}
 
 	@GetMapping(value = "/building")
 	public List<BuildingDTO> searchBuilding(@RequestParam Map<String, String> model, @RequestParam("types") String[] types){
@@ -75,7 +37,7 @@ public class BuildingAPI {
 				.setTypes(types)
 				.build();
 		
-		return null;
+		return buildingService.findAll(builder);
 	}
 	
 	@GetMapping(value = "/building/types")

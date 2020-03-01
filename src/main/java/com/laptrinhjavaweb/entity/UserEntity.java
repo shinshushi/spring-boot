@@ -1,4 +1,4 @@
-package com.laptrinhjavaweb.entity;
+ package com.laptrinhjavaweb.entity;
 
 import java.util.ArrayList;
 import java.util.List;
